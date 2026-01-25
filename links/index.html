@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eva Ascarza">
+    <title>My Links - Eva Ascarza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0;
+            padding-top: 20px;
+            font-size: 17px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+            z-index: 100;
+            padding: 15px 0;
+            display: none;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 1.6em;
+            font-weight: 400;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        nav {
+            margin-top: 0;
+            display: none;
+        }
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 400;
+            font-size: 0.95em;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #0066cc;
+        }
+
+        main {
+            padding: 0 20px 40px 20px;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            margin-top: 15px;
+            color: #0066cc;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 15px;
+        }
+
+        .link-section {
+            margin-bottom: 20px;
+        }
+
+        .link-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .link-section li {
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+
+        .link-section a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .link-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px 0;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #999;
+            font-size: 0.85em;
+            display: none;
+        }
+
+        footer a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 968px) {
+            .links-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding-top: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Eva Ascarza</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="links.html">Links</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="links-grid">
+            <!-- Column 1 -->
+            <div>
+                <div class="link-section">
+                    <h2>HBS</h2>
+                    <ul>
+                        <li><a href="https://inside.hbs.edu/my/default.aspx" target="_blank">Portal</a></li>
+                        <li><a href="https://ris.hbs.edu" target="_blank">RIS</a></li>
+                        <li><a href="https://travel.harvard.edu/concur" target="_blank">Concur</a></li>
+                        <li><a href="https://inside.hbs.edu/Departments/mba/faculty-services/default.aspx" target="_blank">Faculty Services</a></li>
+                        <li><a href="https://secure.hbs.edu/hbsPoll/" target="_blank">Poll</a></li>
+                        <li><a href="https://hbs.sharepoint.com/sites/HBSResearchHub" target="_blank">Research Hub</a></li>
+                        <li><a href="https://hbs.sharepoint.com/sites/HBSDigitalTeachingandLearningHub" target="_blank">Teaching & Learning Hub</a></li>
+                    </ul>
+                </div>
+
+                <div class="link-section">
+                    <h2>Teaching</h2>
+                    <ul>
+                        <li><a href="https://hbs.instructure.com/courses/15517" target="_blank">MCG Canvas</a></li>
+                        <li style="padding-left: 20px;"><a href="https://dashbird2.hbssims.org/api/hbs/productSample/teleko" target="_blank">Teleko (Test cohort admin)</a></li>
+                        <li style="padding-left: 20px;"><a href="https://dashbird2.hbssims-dev.org/api/clogin?t=c1_4569_43019_1762809037_l%2BJT4pqOmqt5FjkbhNoZI2ZoYijb97R66HQlDl6Hx4E%3D" target="_blank">Teleko (Test student gmail)</a></li>
+                        <li><a href="https://community.exed.hbs.edu/program/s/" target="_blank">Exec Ed platform</a></li>
+                        <li><a href="https://secure.hbs.edu/classcards/search.do" target="_blank">Class cards</a></li>
+                        <li><a href="https://hbsvideo.mediaspace.kaltura.com/my-media" target="_blank">Kaltura</a></li>
+                        <li><a href="https://hbs.hosted.panopto.com/Panopto/Pages/Home.aspx" target="_blank">Panopto</a></li>
+                        <li><a href="https://eascarza.shinyapps.io/travelogo_dashboard//" target="_blank">Travelogo Shiny</a></li>
+                        <li><a href="https://eascarza.shinyapps.io/teleko_dashboard/" target="_blank">Teleko Shinny</a></li>
+                    </ul>
+                </div>
+
+                <div class="link-section">
+                    <h2>Harvard</h2>
+                    <ul>
+                        <li><a href="https://peoplesoft.harvard.edu" target="_blank">Harvard Key (Peoplesoft)</a></li>
+                        <li><a href="https://irb.harvard.edu" target="_blank">IRB, DAT, DUA</a></li>
+                    </ul>
+                </div>
+
+                <div class="link-section">
+                    <h2>Research Grid</h2>
+                    <ul>
+                        <li><a href="https://grid.rcs.hbs.org/welcome-grid" target="_blank">HBS Grid</a></li>
+                        <li><a href="https://inside.hbs.edu/Departments/rcs/online-request-forms/Pages/default.aspx" target="_blank">Grid Request Forms</a></li>
+                        <li><a href="https://training.rcs.hbs.org/" target="_blank">HBS research computing</a></li>
+                        <li><a href="https://outlook.office365.com/owa/" target="_blank">HBS e-mail</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div>
+                <div class="link-section">
+                    <h2>References</h2>
+                    <ul>
+                        <li><a href="https://scholar.google.com/schhp?hl=en&as_sdt=0.22&inst=6453797383205921872" target="_blank">Google Scholar (HBS)</a></li>
+                        <li><a href="https://hollis.harvard.edu/primo-explore/search?vid=HVD2&sortby=rank&lang=en_US" target="_blank">HOLLIS (Harvard Library)</a></li>
+                        <li><a href="https://hbsp.harvard.edu/educator/" target="_blank">HBR Publishing</a></li>
+                        <li><a href="https://www-statista-com.ezp-prod1.hul.harvard.edu/" target="_blank">Statista</a></li>
+                        <li><a href="https://www.library.hbs.edu/find/guides/demographics-consumer-behavior" target="_blank">Baker - Marketing</a></li>
+                        <li><a href="https://archive.ph/" target="_blank">Link to articles</a></li>
+                    </ul>
+                </div>
+
+                <div class="link-section">
+                    <h2>Work Miscellaneous</h2>
+                    <ul>
+                        <li><a href="https://chatgpt.com/g/g-677e66d1158c8191b61a3d0e4861915a-email-refinement-assistant/" target="_blank">EmailPT</a></li>
+                        <li><a href="https://chat.openai.com/" target="_blank">Chat GPT</a></li>
+                        <li><a href="https://hbs.sandbox.ai.huit.harvard.edu/" target="_blank">Harvard AI sandbox</a></li>
+                        <li><a href="https://gemini.google.com/app" target="_blank">Gemini</a></li>
+                        <li><a href="https://notebooklm.google.com/" target="_blank">Notebook LM</a></li>
+                        <li><a href="https://www.overleaf.com/project" target="_blank">Overleaf</a></li>
+                        <li><a href="https://managehosting.aruba.it/AreaUtenti.asp?Lang=EN" target="_blank">Website (Aruba)</a></li>
+                        <li><a href="https://docs.google.com/spreadsheets/d/1ouItr9gpggZLa5VRKLoYVAABlf-3oXw2Q66qUneYXl0/edit?gid=0#gid=0" target="_blank">My Weekly Planning</a></li>
+                    </ul>
+                </div>
+
+                <div class="link-section">
+                    <h2>ERB Journals</h2>
+                    <ul>
+                        <li><a href="https://mc.manuscriptcentral.com/mksc" target="_blank">Mkt Sci</a></li>
+                        <li><a href="https://mc.manuscriptcentral.com/ms" target="_blank">Mngmt Sci</a></li>
+                        <li><a href="https://www.editorialmanager.com/QMEC/default.aspx" target="_blank">QME</a></li>
+                        <li><a href="https://mc.manuscriptcentral.com/ama_jmr" target="_blank">JMR</a></li>
+                        <li><a href="https://mc.manuscriptcentral.com/ama_jm" target="_blank">JM</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Column 3 -->
+            <div>
+                <div class="link-section">
+                    <h2>Other Services</h2>
+                    <ul>
+                        <li><a href="https://portal.experianidworks.com/dashboard" target="_blank">ID safe - Experian</a></li>
+                        <li><a href="https://docs.google.com/document/d/1oyMr52yeZuKWnCXYWhV1lSfJg7ehRVZX4Y91i0aM65k/edit" target="_blank">Atalaya Google Doc</a></li>
+                        <li><a href="https://garmentvalet.com/" target="_blank">Garmet Valet</a></li>
+                    </ul>
+                </div>
+
+                <div class="link-section">
+                    <h2>Cerdito</h2>
+                    <ul>
+                        <li><a href="https://www.chase.com/online/Credit-Cards/united-home.htm" target="_blank">United Chase</a></li>
+                        <li><a href="http://portal.lacaixa.es/" target="_blank">CaixaBank</a></li>
+                        <li><a href="https://bancaonline.bankinter.com/gestion/login.xhtml" target="_blank">Bankinter</a></li>
+                        <li><a href="https://home.cards.citidirect.com/CommercialCard/ux/index.html#/login?locale=en" target="_blank">Citi Manager (HBS card)</a></li>
+                        <li><a href="https://investor.vanguard.com/corporate-portal" target="_blank">Vanguard</a></li>
+                        <li><a href="https://www.tiaa.org/public/tcm/harvard" target="_blank">TIAA</a></li>
+                        <li><a href="https://wise.com/home/" target="_blank">Wise</a></li>
+                    </ul>
+                </div>
+
+                <div class="link-section">
+                    <h2>Health</h2>
+                    <ul>
+                        <li><a href="https://patient.huhs.harvard.edu/login_dualauthentication.aspx" target="_blank">Harvard (HUHS)</a></li>
+                        <li><a href="https://mychart.mah.org/MyChart/inside.asp" target="_blank">Mt. Auburn</a></li>
+                        <li><a href="https://myhealth.atriushealth.org/Home" target="_blank">Atrius Health</a></li>
+                        <li><a href="https://member.bluecrossma.com/home" target="_blank">Blue Cross [provider records]</a></li>
+                        <li><a href="https://sentinelgroup.lh1ondemand.com/Login.aspx?ReturnUrl=%2f" target="_blank">Sentinel - old Voya - Benefits Strategy [HSA]</a></li>
+                        <li><a href="https://www.optumbank.com/" target="_blank">Optum</a></li>
+                        <li><a href="https://connectsso.deltadentalma.com/authsso/DeltaSSOMA_mem.aspx?TYPE=33554433&REALMOID=06-46ac2986-df04-4d8a-95a8-95fdfa60b45f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=tWZxNi1JU9thYY9iU9RPVAH9LTIeOUpNT1jdlRq6zH6RE3Ndr5LOizANy2CgGWLD5CL8q4OWgB0GfjROopmBBOlEqWcXldin&TARGET=-SM-https%3a%2f%2fconnectsso%2edeltadentalma%2ecom%2fmember%2findex%2ehtml/" target="_blank">Delta Dental</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <a href="https://www.hbs.edu/faculty/Pages/profile.aspx?facId=548988" target="_blank">Harvard Business School Profile</a> |
+            <a href="https://d3.harvard.edu/labs/customer-intelligence-lab/" target="_blank">Customer Intelligence Lab</a>
+        </p>
+        <p style="margin-top: 10px;">© 2026 Eva Ascarza</p>
+    </footer>
+</body>
+</html>
