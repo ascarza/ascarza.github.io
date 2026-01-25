@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eva Ascarza">
+    <title>Eva Ascarza</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+            padding-top: 90px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 1.6em;
+            font-weight: 400;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        nav {
+            margin-top: 0;
+        }
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 400;
+            font-size: 0.95em;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #0066cc;
+        }
+
+        main {
+            padding: 0 20px 40px 20px;
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 40px;
+            margin: 0 0 30px 0;
+            align-items: start;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .bio {
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .bio p {
+            margin-bottom: 12px;
+        }
+
+        section {
+            margin: 30px 0;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            margin-top: 35px;
+            color: #1a1a1a;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: #0066cc;
+        }
+
+        .paper {
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .paper-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 0.98em;
+        }
+
+        .paper-authors {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .paper-authors a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-left: 12px;
+            font-size: 1em;
+        }
+
+        .paper-authors a:hover {
+            text-decoration: underline;
+        }
+
+        .paper-venue {
+            color: #555;
+            font-style: italic;
+            font-size: 0.88em;
+            margin-top: 2px;
+        }
+
+        .paper-award {
+            color: #c17700;
+            font-weight: 500;
+            font-size: 0.85em;
+            margin-top: 2px;
+        }
+
+        .research-interests {
+            margin-top: 12px;
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px 0;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #999;
+            font-size: 0.85em;
+        }
+
+        footer a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        a {
+            color: #0066cc;
+        }
+
+
+
+        .abstract-toggle {
+            color: #0066cc;
+            cursor: pointer;
+            font-size: 0.85em;
+            margin-left: 8px;
+            text-decoration: none;
+            user-select: none;
+        }
+
+        .abstract-toggle:hover {
+            text-decoration: underline;
+        }
+
+        .abstract {
+            display: none;
+            margin-top: 8px;
+            padding: 12px;
+            background-color: #f8f9fa;
+            border-left: 3px solid #0066cc;
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .abstract.show {
+            display: block;
+        }
+
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 110px;
+            }
+
+            .profile-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .profile-image {
+                width: 200px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            nav a {
+                display: inline-block;
+                margin-bottom: 8px;
+                margin-right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Eva Ascarza</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="ascarza_cv_web.pdf" target="_blank">CV</a>
+                <a href="https://www.hbs.edu/faculty/Pages/profile.aspx?facId=548988" target="_blank">HBS Profile</a>
+                <a href="https://d3.harvard.edu/labs/customer-intelligence-lab/" target="_blank">Customer Intelligence Lab</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="profile-section">
+            <div>
+                <img src="photo.jpg" alt="Eva Ascarza" class="profile-image">
+            </div>
+            <div class="bio">
+                <p><strong>Professor of Business Administration, Harvard Business School</strong></p>
+                <p>I am a marketing professor at Harvard Business School where I research, teach, and think about how companies can better manage customers for growth, and how data and artificial intelligence (AI) can enable them to do so.</p>
+
+                <p>My research interests include customer retention, personalization and targeting, AI in Marketing, and algorithmic bias. I enjoy helping companies make sense of their data to better understand their customers, measure and assess their value, and quantify the impact of their actions and interventions.</p>
+
+                <p>I am a co-founder of the <a href="https://d3.harvard.edu/labs/customer-intelligence-lab/" target="_blank">Customer Intelligence Lab</a> at the D³ Institute at HBS where we conduct research with the goal of helping organizations use their valuable customer data effectively and responsibly.</p>
+            </div>
+        </div>
+
+        <h3>Research Interests</h3>
+        <div class="research-interests">
+            Customer Management | Personalization & Targeting | Marketing Incrementality | AI in Marketing | Algorithmic Bias | Customer Data Privacy
+        </div>
+    </section>
+
+    <section id="research">
+        <h2>Research</h2>
+
+        <h3>Working Papers</h3>
+
+
+
+        <div class="paper" data-keywords="policy experimentation targeting sampling optimization personalization">
+            <div class="paper-title">Policy-Aware Experimentation: Strategic Sampling for Optimized Targeting Policies
+                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+            </div>
+            <div class="paper-authors">Yi-Wen Chen, Eva Ascarza and Oded Netzer (2025)
+                <a href="https://ssrn.com/abstract=5044549" target="_blank">[Paper]</a>
+            </div>
+            <div class="abstract">
+                This paper develops a framework for designing experiments that optimize both learning and targeting outcomes. We show how strategic sampling decisions during experimentation can significantly improve the effectiveness of subsequent targeting policies.
+            </div>
+        </div>
+
+        <div class="paper" data-keywords="privacy data protection targeting treatment effects calibration">
+            <div class="paper-title">Improving Targeting with Privacy-Protected Data: Honest Calibration of Treatment Effects
+                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+            </div>
+            <div class="paper-authors">Ta-Wei Huang and Eva Ascarza (2025)
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4575240" target="_blank">[Paper]</a>
+            </div>
+            <div class="abstract">
+                This research addresses the challenge of personalized targeting when customer data is privacy-protected. We develop methods for honest calibration of treatment effects that maintain targeting effectiveness while respecting privacy constraints.
+            </div>
+        </div>
+
+        <div class="paper" data-keywords="personalization dynamic reinforcement learning signals customer behavior">
+            <div class="paper-title">Dynamic Personalization with Multiple Customer Signals: Multi-Response State Representation in Reinforcement Learning
+                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+            </div>
+            <div class="paper-authors">Liangzong Ma, Ta-Wei Huang, Eva Ascarza and Ayelet Israeli (2025)
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5126129" target="_blank">[Paper]</a>
+            </div>
+            <div class="abstract">
+                We propose a reinforcement learning approach for dynamic personalization that effectively integrates multiple customer signals. Our framework uses multi-response state representation to improve personalization decisions over time.
+            </div>
+        </div>
+
+        <div class="paper" data-keywords="incrementality prediction experiments intervention personalization uplift">
+            <div class="paper-title">Incrementality Prediction: Synergizing Past Experiments for Intervention Personalization
+                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+            </div>
+            <div class="paper-authors">Ta-Wei Huang, Eva Ascarza and Ayelet Israeli (2025)
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4859809" target="_blank">[Paper]</a>
+            </div>
+            <div class="abstract">
+                This paper develops a method to predict treatment incrementality by leveraging information from past experiments. We show how synthesizing insights across multiple experiments improves intervention personalization and resource allocation.
+            </div>
+        </div>
+
+        <div class="paper" data-keywords="sales conversations ai agents stopping decisions optimization">
+            <div class="paper-title">Learning When to Quit in Sales Conversations
+                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+            </div>
+            <div class="paper-authors">Emaad Manzoor, Eva Ascarza and Oded Netzer (2025)
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5692084" target="_blank">[Paper]</a>
+                <a href="https://stoppingagents.com/" target="_blank">[Website]</a>
+            </div>
+            <div class="abstract">
+                We develop AI agents that learn optimal stopping decisions in sales conversations. Our approach identifies when to continue or terminate conversations to maximize efficiency and customer experience.
+            </div>
+        </div>
+
+        <div class="paper" data-keywords="privacy trust regulation data sharing behavior gdpr">
+            <div class="paper-title">In Privacy We Trust: The Effect of Privacy Regulations on Data Sharing Behavior
+                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+            </div>
+            <div class="paper-authors">Ozge Demirci, Eva Ascarza and Ayelet Israeli (2025)
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5294893" target="_blank">[Paper]</a>
+            </div>
+            <div class="abstract">
+                This research examines how privacy regulations affect consumer willingness to share data. We analyze the impact of regulatory frameworks on trust and data sharing behavior across different contexts.
+            </div>
+        </div>
+
+        <div class="paper" data-keywords="fairness algorithmic bias heterogeneity variance personalization discrimination">
+            <div class="paper-title">Protected Heterogeneity: A Variance-Based Framework for Fair Algorithmic Personalization
+                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+            </div>
+            <div class="paper-authors">Noah Ahmadi, Eva Ascarza and Ayelet Israeli (2025)
+                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5756222" target="_blank">[Paper]</a>
+            </div>
+            <div class="abstract">
+                We propose a variance-based framework to ensure fairness in algorithmic personalization. Our approach balances personalization effectiveness with fairness constraints to prevent discrimination while maintaining performance.
+            </div>
+        </div>
+
+        <div class="paper" data-keywords="experiments bayesian heterogeneity treatment effects hierarchical modeling">
+            <div class="paper-title">Learning from Many Experiments: A Hierarchical Bayesian Framework for Decomposing Marketing Treatment Heterogeneity
+                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+            </div>
+            <div class="paper-authors">Peter Ebbes, Eva Ascarza and Oded Netzer (2025)</div>
+            <div class="abstract">
+                This paper develops a hierarchical Bayesian framework to decompose treatment heterogeneity across multiple marketing experiments. We show how to synthesize learnings from many experiments to better understand heterogeneous treatment effects.
+            </div>
+        </div>
+
+        <h3>Published / Forthcoming</h3>
+
+        <div class="paper">
+            <div class="paper-title">Personalization and Targeting: How to Experiment, Learn & Optimize</div>
+            <div class="paper-authors">Aurélie Lemmens, Jason M.T. Roos, Sebastian Gabel, Eva Ascarza, Hernan Bruno, Brett R. Gordon, Ayelet Israeli, Elea McDonnell Feit, Carl Mela, and Oded Netzer (2025)
+                <a href="https://www.sciencedirect.com/science/article/pii/S016781162500062X?via%3Dihub" target="_blank">[Paper]</a>
+            </div>
+            <div class="paper-venue">International Journal of Research in Marketing</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Personalized Game Design for Improved User Retention and Monetization in Freemium Mobile Games</div>
+            <div class="paper-authors">Eva Ascarza, Oded Netzer and Julian Runge (2025)
+                <a href="Ascarza_Netzer_Runge_IJRM25.pdf" target="_blank">[Paper]</a>
+                <a href="Ascarza_Netzer_Runge_IJRM25_Web_Appendix.pdf" target="_blank">[Web Appendix]</a>
+            </div>
+            <div class="paper-venue">International Journal of Research in Marketing</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">The Customer Journey as a Source of Information</div>
+            <div class="paper-authors">Nicolas Padilla, Eva Ascarza and Oded Netzer (2024)
+                <a href="https://link.springer.com/article/10.1007/s11129-024-09287-y" target="_blank">[Paper]</a>
+                <a href="padilla_et_al_qme24_web_appendix.pdf" target="_blank">[Web Appendix]</a>
+            </div>
+            <div class="paper-venue">Quantitative Marketing and Economics</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Doing More with Less: Overcoming Ineffective Long-term Targeting Using Short-Term Signals</div>
+            <div class="paper-authors">Ta-Wei Huang and Eva Ascarza (2024)
+                <a href="Huang_Ascarza_2024_doing_more_with_less.pdf" target="_blank">[Paper]</a>
+                <a href="https://services.informs.org/dataset/mksc/download.php?doi=mksc.2022.0379" target="_blank">[Replication Files]</a>
+            </div>
+            <div class="paper-venue">Marketing Science 43(4), 863-884</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Detecting Routines: Implications for Ridesharing CRM</div>
+            <div class="paper-authors">Ryan Dew, Eva Ascarza, Oded Netzer, and Nachum Sicherman (2024)
+                <a href="dew-et-al-2023-detecting-routines.pdf" target="_blank">[Paper]</a>
+                <a href="dew_et_al_23_forthcoming_web_appendix.pdf" target="_blank">[Web Appendix]</a>
+                <a href="https://github.com/rtdew1/detecting-routines" target="_blank">[Replication Files]</a>
+            </div>
+            <div class="paper-venue">Journal of Marketing Research 61(2), 368-392</div>
+            <div class="paper-award">Finalist, 2025 Paul E. Green Award</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Eliminating Unintended Bias in Personalized Policies using Bias Eliminating Adapted Trees (BEAT)</div>
+            <div class="paper-authors">Eva Ascarza and Ayelet Israeli (2022)
+                <a href="https://www.pnas.org/doi/epdf/10.1073/pnas.2115293119" target="_blank">[Paper]</a>
+                <a href="https://www.pnas.org/doi/10.1073/pnas.2115293119#supplementary-materials" target="_blank">[Web Appendix]</a>
+                <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EWEB0W" target="_blank">[Replication Files]</a>
+                <a href="https://github.com/ayeletis/beat" target="_blank">[Github]</a>
+            </div>
+            <div class="paper-venue">Proceedings of the National Academy of Sciences 119(11)</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Overcoming the Cold Start Problem of CRM using a Probabilistic Machine Learning Approach</div>
+            <div class="paper-authors">Nicolas Padilla and Eva Ascarza (2021)
+                <a href="https://journals.sagepub.com/doi/full/10.1177/00222437211032938" target="_blank">[Paper]</a>
+                <a href="padilla_ascarza_jmr2021_WebAppendix.pdf" target="_blank">[Web Appendix]</a>
+                <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/E6LNGS" target="_blank">[Replication Files]</a>
+            </div>
+            <div class="paper-venue">Journal of Marketing Research 58(5), 981-1006</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Why You Aren't Getting More from Your Marketing AI</div>
+            <div class="paper-authors">Eva Ascarza, Michael Ross, and Bruce G.S. Hardie (2021)
+                <a href="https://hbr.org/2021/07/why-you-arent-getting-more-from-your-marketing-ai" target="_blank">[Link]</a>
+            </div>
+            <div class="paper-venue">Harvard Business Review, July-August</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Retention Futility: Targeting High-Risk Customers Might be Ineffective</div>
+            <div class="paper-authors">Eva Ascarza (2018)
+                <a href="ascarza_18.pdf" target="_blank">[Paper]</a>
+                <a href="ascarza_18_web_appendix.pdf" target="_blank">[Web Appendix]</a>
+            </div>
+            <div class="paper-venue">Journal of Marketing Research 55(1), 80-98</div>
+            <div class="paper-award">Winner, 2023 Weitz-Winer-O'Dell Award<br>Winner, 2018 Paul E. Green Award</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">In Pursuit of Enhanced Customer Retention Management: Review, Key Issues, and Future Directions</div>
+            <div class="paper-authors">Eva Ascarza, Scott A. Neslin, Oded Netzer et al. (2018)
+                <a href="ascarza_et_al_choice_symposium.pdf" target="_blank">[Paper]</a>
+            </div>
+            <div class="paper-venue">Customer Needs and Solutions 5, 65-81</div>
+            <div class="paper-award">Finalist, 2019 MSI Robert D. Buzzell Best Paper Award</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Some Customers Would Rather Leave Without Saying Goodbye</div>
+            <div class="paper-authors">Eva Ascarza, Oded Netzer and Bruce Hardie (2018)
+                <a href="ascarza_netzer_hardie_18.pdf" target="_blank">[Paper]</a>
+                <a href="ascarza_netzer_hardie_18_web_appendix.pdf" target="_blank">[Web Appendix]</a>
+            </div>
+            <div class="paper-venue">Marketing Science 37(1), 54-77</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Beyond the Target Customer: Social Effects of CRM Campaigns</div>
+            <div class="paper-authors">Eva Ascarza, Peter Ebbes, Oded Netzer and Matthew Danielson (2017)
+                <a href="ascarza_ebbes_netzer_danielson_17.pdf" target="_blank">[Paper]</a>
+                <a href="ascarza_ebbes_netzer_danielson_17_web_appendix.pdf" target="_blank">[Web Appendix]</a>
+            </div>
+            <div class="paper-venue">Journal of Marketing Research 54(3), 347-363</div>
+            <div class="paper-award">Finalist, 2017 Paul E. Green Award</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">The Perils of Proactive Churn Prevention using Plan Recommendations: Evidence from a Field Experiment</div>
+            <div class="paper-authors">Eva Ascarza, Raghuram Iyengar and Martin Schleicher (2016)
+                <a href="ascarza_iyengar_schleicher_16.pdf" target="_blank">[Paper]</a>
+                <a href="ascarza_iyengar_schleicher_16_web_appendix.pdf" target="_blank">[Web Appendix]</a>
+            </div>
+            <div class="paper-venue">Journal of Marketing Research 53(1), 46-60</div>
+            <div class="paper-award">Finalist, 2021 Weitz-Winer-O'Dell Award<br>Finalist, 2016 Paul E. Green Award</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">A Joint Model of Usage and Churn in Contractual Settings</div>
+            <div class="paper-authors">Eva Ascarza and Bruce G.S. Hardie (2013)
+                <a href="ascarza_hardie_13.pdf" target="_blank">[Paper]</a>
+                <a href="ascarza_hardie_13_web_appendix.pdf" target="_blank">[Web Appendix]</a>
+            </div>
+            <div class="paper-venue">Marketing Science 32(4), 570-590</div>
+            <div class="paper-award">Winner, 2014 Frank M. Bass Outstanding Dissertation Award</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">When Talk is Free: The Effect of Tariff Structure on Usage under Two and Three-Part Tariffs</div>
+            <div class="paper-authors">Eva Ascarza, Anja Lambrecht and Naufel Vilcassim (2012)
+                <a href="ascarza_lambrecht_vilcassim_12.pdf" target="_blank">[Paper]</a>
+                <a href="ascarza_lambrecht_vilcassim_12_web_appendix.pdf" target="_blank">[Web Appendix]</a>
+            </div>
+            <div class="paper-venue">Journal of Marketing Research 49(6), 882-899</div>
+        </div>
+
+        <h3>Book Chapters</h3>
+
+        <div class="paper">
+            <div class="paper-title">Marketing Models for the Customer-Centric Firm</div>
+            <div class="paper-authors">Eva Ascarza, Peter S. Fader, and Bruce G.S. Hardie
+                <a href="ascarza_fader_hardie_17.pdf" target="_blank">[Paper]</a>
+            </div>
+            <div class="paper-venue">Handbook of Marketing Decision Models (2017), edited by Berend Wierenga and Ralf van der Lans, Springer</div>
+        </div>
+
+        <h3>Online Publications</h3>
+
+        <div class="paper">
+            <div class="paper-title">Research: When A/B Testing Doesn't Tell You the Whole Story</div>
+            <div class="paper-authors">Eva Ascarza
+                <a href="https://hbr.org/2021/06/research-when-a-b-testing-doesnt-tell-you-the-whole-story" target="_blank">[Link]</a>
+            </div>
+            <div class="paper-venue">Harvard Business Review Online (June 23, 2021)</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Beyond Pajamas: Sizing Up the Pandemic Shopper</div>
+            <div class="paper-authors">Ayelet Israeli, Eva Ascarza and Laura Castrillo
+                <a href="https://hbswk.hbs.edu/item/beyond-pajamas-sizing-up-the-pandemic-shopper" target="_blank">[Link]</a>
+            </div>
+            <div class="paper-venue">Working Knowledge (March 17, 2021)</div>
+        </div>
+
+        <h3>Research Featured in Other Outlets</h3>
+
+        <div class="paper">
+            <div class="paper-title">Navigating Consumer Data Privacy in an AI World
+                <a href="https://hbswk.hbs.edu/item/navigating-consumer-data-privacy-in-an-ai-world" target="_blank">[Link]</a>
+            </div>
+            <div class="paper-venue">Working Knowledge (June 4, 2024)</div>
+            <div class="paper-authors">Featuring "Debiasing Treatment Effect Estimation for Privacy-Protected Data: A Model Audition and Calibration Approach"</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">When Bias Creeps into AI, Managers Can Stop It by Asking the Right Questions
+                <a href="https://hbswk.hbs.edu/item/when-bias-creeps-into-ai-managers-can-stop-it-by-asking-the-right-questions" target="_blank">[Link]</a>
+            </div>
+            <div class="paper-venue">Working Knowledge (Oct 18, 2022)</div>
+            <div class="paper-authors">Featuring "Eliminating unintended bias in personalized policies using Bias Eliminating Adapted Trees (BEAT)"</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Identify Great Customers from Their First Purchase
+                <a href="https://hbswk.hbs.edu/item/identify-great-customers-from-their-first-purchase" target="_blank">[Link]</a>
+            </div>
+            <div class="paper-venue">Working Knowledge (Dec 9, 2019)</div>
+            <div class="paper-authors">Featuring "Overcoming the Cold Start Problem of CRM using a Probabilistic Machine Learning Approach"</div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">The Wrong Way to Reduce Churn
+                <a href="https://hbr.org/2015/10/the-wrong-way-to-reduce-churn" target="_blank">[Link]</a>
+            </div>
+            <div class="paper-venue">Harvard Business Review (October, 2015)</div>
+            <div class="paper-authors">Featuring "The perils of proactive churn prevention using plan recommendations: Evidence from a field experiment"</div>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="https://www.hbs.edu/faculty/Pages/profile.aspx?facId=548988" target="_blank">Harvard Business School Profile</a> |
+            <a href="https://d3.harvard.edu/labs/customer-intelligence-lab/" target="_blank">Customer Intelligence Lab</a>
+        </p>
+        <p style="margin-top: 10px;">© 2026 Eva Ascarza</p>
+    </footer>
+
+    <script>
+        // Toggle abstract visibility
+        function toggleAbstract(element) {
+            const paper = element.closest('.paper');
+            const abstract = paper.querySelector('.abstract');
+
+            if (abstract.classList.contains('show')) {
+                abstract.classList.remove('show');
+                element.textContent = '[Show Abstract]';
+            } else {
+                abstract.classList.add('show');
+                element.textContent = '[Hide Abstract]';
+            }
+        }
+
+    </script>
+</body>
+</html>
