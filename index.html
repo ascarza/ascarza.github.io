@@ -278,9 +278,33 @@
                 margin-right: 15px;
             }
         }
-    </style>
+    
+/* Preview design: overrides are intentionally confined to index_new.html. */
+:root{--ink:#22232b;--accent:#57068c;--muted:#65616c;--line:#e7e2ea;--paper:#faf8fb}
+body{max-width:none;padding-top:0;color:var(--ink);font-size:17px;background:#fff}
+a{color:var(--accent);text-underline-offset:3px}
+header{position:sticky;padding:18px 0;background:rgba(255,255,255,.97);border-color:var(--line)}
+.header-content{max-width:1160px;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:0 32px}
+h1{font-size:25px;font-weight:600;margin:0;letter-spacing:-.7px}nav{display:flex;gap:22px;flex-wrap:wrap}nav a{margin:0;font-size:15px}nav a:hover{color:var(--accent)}
+main{max-width:1160px;margin:auto;padding:0 32px 50px}section{scroll-margin-top:110px}
+.preview-tools{background:var(--paper);border-bottom:1px solid var(--line);padding:13px 32px;font-size:13px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;color:var(--muted)}
+.preview-tools strong{color:var(--ink)}.layout-buttons{display:flex;gap:5px;flex-wrap:wrap}button,input{font:inherit}button{cursor:pointer}.layout-buttons button{border:1px solid var(--line);background:white;color:var(--muted);padding:6px 12px;border-radius:5px;font-size:13px}.layout-buttons button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:white}
+#about{margin:0;padding:64px 0 52px}.profile-section{grid-template-columns:minmax(0,1fr) 280px;gap:70px;margin:0;align-items:start}.portrait{grid-column:2;grid-row:1}.bio{grid-column:1;grid-row:1;font-size:17px;line-height:1.75;max-width:700px}.profile-image{width:100%;display:block;border-radius:5px}.eyebrow{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.8px;color:var(--accent);margin-bottom:12px}.intro-title{border:0;font-size:39px;line-height:1.19;font-weight:400;letter-spacing:-1.1px;padding:0;margin:0 0 24px;max-width:640px}.bio p{margin-bottom:16px}.role{font-size:15px;color:var(--muted);margin-bottom:24px!important}.profile-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.profile-actions a{font-size:14px;text-decoration:none;padding:9px 15px;border:1px solid var(--line);border-radius:4px}.profile-actions a:first-child{background:var(--accent);color:white;border-color:var(--accent)}.portrait-contact{margin-top:17px;font-size:14px;line-height:1.7;color:var(--muted)}.portrait-contact .email-address{display:block;font-weight:600;overflow-wrap:anywhere;color:var(--accent)}.portrait-contact address{font-style:normal;margin-top:8px}
+body[data-layout=left] .profile-section{grid-template-columns:260px minmax(0,1fr);gap:60px}body[data-layout=left] .portrait{grid-column:1}body[data-layout=left] .bio{grid-column:2}
+body[data-layout=compact] .profile-section{grid-template-columns:minmax(0,1fr) 190px;gap:45px}body[data-layout=compact] .intro-title{font-size:32px}body[data-layout=compact] #about{padding-top:40px;padding-bottom:30px}body[data-layout=compact] .profile-image{max-height:225px;object-fit:cover;object-position:center 25%}
+#research{border-top:1px solid var(--line);padding-top:34px;margin-top:0}h2{font-size:29px;border:0;letter-spacing:-.5px;margin-bottom:18px}h3{color:var(--accent);font-size:20px;margin:32px 0 20px}.paper{padding:0 0 19px;margin-bottom:19px;border-bottom:1px solid #efedf1;line-height:1.5}.paper-title{font-size:17px;font-weight:600}.paper-authors-line{flex-wrap:wrap;gap:5px 12px}.paper-authors{color:var(--muted)}.paper-links a,.abstract-toggle{color:var(--accent);font-size:13px}.abstract-toggle{border:0;background:none;padding:0;text-align:left}.abstract{font-size:15px;line-height:1.65}.abstract.show{max-height:none}.paper-award{color:#895c20}.research-tools{margin:0 0 25px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}.research-tools input{width:min(100%,390px);padding:10px 12px;border:1px solid #bdb4c5;border-radius:4px;font-size:14px}.research-shortcuts{display:flex;gap:15px;flex-wrap:wrap;font-size:14px}.search-status{font-size:13px;color:var(--muted);margin-bottom:15px}#contact{background:var(--paper);padding:28px;border-radius:5px}.contact-info{margin:0;font-size:15px;color:var(--muted)}footer{margin:0;border-color:var(--line);padding:24px;font-size:13px}.skip-link{position:absolute;left:12px;top:-100px;background:white;padding:10px;z-index:200}.skip-link:focus{top:8px}:focus-visible{outline:3px solid #9e70bc;outline-offset:4px}[hidden]{display:none!important}
+@media(max-width:760px){header{position:relative}.header-content{display:block;padding:0 22px}nav{gap:10px 18px;margin-top:10px}nav a{margin:0;font-size:14px}main{padding:0 22px 30px}.preview-tools{padding:12px 22px;justify-content:flex-start}#about,body[data-layout=compact] #about{padding:32px 0}.profile-section,body[data-layout=left] .profile-section,body[data-layout=compact] .profile-section{grid-template-columns:minmax(0,1fr);gap:26px}.bio,body[data-layout=left] .bio{grid-column:1;grid-row:2}.portrait,body[data-layout=left] .portrait{grid-column:1;grid-row:1;display:grid;grid-template-columns:130px minmax(0,1fr);gap:20px;align-items:center}.profile-image{width:100%;max-width:180px}.portrait-contact{margin:0;font-size:12px}.intro-title,body[data-layout=compact] .intro-title{font-size:30px}.bio{font-size:16px}.role{font-size:14px}section{scroll-margin-top:20px}.paper-title{font-size:16px}}
+
+/* Tighter spacing for version 2. */
+#about,body[data-layout=compact] #about{padding-top:28px;padding-bottom:16px}
+#research{padding-top:10px}
+.paper{padding-bottom:8px;margin-bottom:10px}
+.abstract:not(.show){margin-top:0}
+</style>
 </head>
-<body>
+<body data-layout="right">
+<a class="skip-link" href="#research">Skip to research</a>
+<div class="preview-tools"><strong>Version 2 · Design preview</strong><span>Compare the introduction layouts:</span><div class="layout-buttons" role="group" aria-label="Introduction layout"><button type="button" data-choice="right" aria-pressed="true">1 · Photo right</button><button type="button" data-choice="left" aria-pressed="false">2 · Photo left</button><button type="button" data-choice="compact" aria-pressed="false">3 · Compact</button></div><a href="index.html">View current site</a></div>
     <header>
         <div class="header-content">
             <h1>Eva Ascarza</h1>
@@ -289,35 +313,32 @@
                 <a href="#research">Research</a>
                 <a href="ascarza_cv_web.pdf" target="_blank">CV</a>
                 <!-- <a href="https://www.hbs.edu/faculty/Pages/profile.aspx?facId=548988" target="_blank">HBS Profile</a> -->
-                <a href="https://www.ayeletisraeli.com/lab/" target="_blank">Customer Intelligence Lab</a>
+    <a href="#contact">Contact</a>
+                <a href="https://d3.harvard.edu/labs/customer-intelligence-lab/" target="_blank">Customer Intelligence Lab</a>
             </nav>
         </div>
     </header>
 
     <main>
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="profile-section">
-            <div>
-                <img src="photo.jpg" alt="Eva Ascarza" class="profile-image">
-                <div class="contact-info">
-                    Leonard N. Stern School of Business <br>
-Tisch Hall 40 W 4th Street, NY 10012<br>
-                    eascarza [at] stern.nyu.edu 
-                </div>
-            </div>
-            <div class="bio">
-                <p>I am the William Joyce Professor of Marketing at <a href="https://www.stern.nyu.edu/" target="_blank">NYU Stern School of Business</a>, where I research, teach, and think about how companies can better manage customers for growth, and how data and artificial intelligence (AI) can enable them to do so.</p>
-
-                <p>My research interests include customer retention, personalization and targeting, AI in Marketing, and algorithmic bias. I enjoy helping companies make sense of their data to better understand their customers, measure and assess their value, and quantify the impact of their actions and interventions.</p>
-
-                <p>I am a co-founder of the <a href="https://d3.harvard.edu/labs/customer-intelligence-lab/" target="_blank">Customer Intelligence Lab</a> at the HBS AI institute where we conduct research with the goal of helping organizations use their valuable customer data effectively and responsibly.</p>
-            </div>
-        </div>
-    </section>
+    <section id="about" aria-labelledby="about-heading">
+<div class="profile-section">
+<aside class="portrait" aria-label="Photo and contact details">
+<img src="photo.jpg" alt="Eva Ascarza" class="profile-image" width="280">
+<div class="portrait-contact"><span class="email-address">eascarza [at] stern.nyu.edu</span><span>NYU Stern School of Business</span><address>Tisch Hall 817 · 40 W 4th Street<br>New York, NY 10012</address></div>
+</aside>
+<div class="bio">
+<div class="eyebrow">About me</div>
+<h2 id="about-heading" class="intro-title">Understanding customers.<br>Improving decisions.</h2>
+<p class="role">William Joyce Professor of Marketing<br><a href="https://www.stern.nyu.edu/" target="_blank" rel="noopener">NYU Stern School of Business</a></p>
+<p>I study how companies can use data and artificial intelligence to better understand their customers and make decisions that drive long-term growth.</p>
+<p>My research examines how companies can learn from customer behavior and experiments to improve personalization, targeting, and retention. My current work develops methods to learn across experiments, combine diverse customer signals, and use generative AI to support marketing decisions. Across these projects, I study how to turn predictions into effective actions while accounting for privacy, fairness, and operational constraints.</p>
+<p>I enjoy working with companies to connect rigorous research with practical decisions: which customers to engage, which actions to take, and how to assess their impact. I am a co-founder of the <a href="https://d3.harvard.edu/labs/customer-intelligence-lab/" target="_blank" rel="noopener">Customer Intelligence Lab</a> at Harvard Business School.</p>
+</div></div>
+</section>
 
     <section id="research">
         <h2>Research</h2>
+<div class="research-tools"><nav class="research-shortcuts" aria-label="Research sections"></nav></div>
 
         <h3>Working Papers</h3>
 
@@ -326,8 +347,8 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
                 <span class="paper-title">Semantic Customer Embeddings</span>
             </div>
             <div class="paper-authors-line">
-                <span class="paper-authors">Isamar Troncoso, Liangzong Ma, EvaAscarza and Ayelet Israeli (2026)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <span class="paper-authors">Isamar Troncoso, Liangzong Ma, Eva Ascarza and Ayelet Israeli (2026)</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We develop a framework for learning semantic customer embeddings that combines the semantic knowledge encoded in large language models with behavioral patterns observed in proprietary customer data. The approach integrates sparse, heterogeneous signals—such as purchases and location visits—into unified customer representations that generalize across marketing applications. Using data from a large customer engagement platform, we show that the embeddings support customer segmentation and persona development, natural-language look-alike discovery, targeting for newly introduced products, and promotional targeting.</div>
         </div>
@@ -338,7 +359,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Yi-Wen Chen, George Gui, and Eva Ascarza (2026)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We develop a capacity-aware targeting framework that accounts for congestion spillovers created when marketing interventions increase demand in capacity-constrained service settings. Applied to ride-hailing data, the approach shows that conventional targeting systematically over-targets customers—sometimes selecting customers whose congestion externalities outweigh their individual benefits—and substantially improves targeting profitability.</div>
         </div>
@@ -352,7 +373,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Peter Ebbes, Eva Ascarza, and Oded Netzer (2026)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We develop a hierarchical Bayesian model that jointly analyzes many randomized experiments to decompose heterogeneity into customer responsiveness, campaign design, and timing. Using large-scale field data, we show that unobserved customer heterogeneity dominates and that repeated exposure leads to intervention fatigue.</div>
         </div>
@@ -367,7 +388,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Emaad Manzoor, Eva Ascarza, and Oded Netzer (2025)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We formalize quitting decisions in sales calls as an optimal stopping problem and develop a generative LLM-based stopping agent trained via imitation learning. Applied to outbound sales calls, the agent reallocates time away from failed calls and increases expected sales by up to 37%.</div>
         </div>
@@ -381,7 +402,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Liangzong Ma, Ta-Wei Huang, Eva Ascarza, and Ayelet Israeli (2026)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We introduce Multi-Response State Representation learning for offline reinforcement learning. By jointly predicting multiple behavioral signals, the method improves state representations and substantially increases long-term value in a mobile gaming application.</div>
         </div>
@@ -395,7 +416,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Ta-Wei Huang, Eva Ascarza, and Ayelet Israeli (2026)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We develop a two-stage causal ML framework that pools hundreds of past experiments to estimate a conditional incrementality function over customers and interventions. Applied to millions of customers, the approach substantially improves targeting and generalizes to new interventions.</div>
         </div>
@@ -409,7 +430,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Ta-Wei Huang and Eva Ascarza (2026)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We study how differential privacy distorts CATE estimation and targeting. We propose an honest calibration approach using doubly robust scores and sample splitting to improve accuracy without violating privacy constraints. The method is model-agnostic and DP-compatible.</div>
         </div>
@@ -423,7 +444,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Ozge Demirci, Ayelet Israeli, and Eva Ascarza (2026)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">Studying privacy regulations in California and Virginia, we show that stronger privacy protections increase consumer data sharing on a digital platform and in national surveys. Effects are strongest among users previously least willing to share, suggesting increased trust rather than heightened concern.</div>
         </div>
@@ -437,7 +458,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Yi-Wen Chen, Eva Ascarza, and Oded Netzer (2026)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">Standard experiments sample uniformly, ignoring decision objectives. We propose policy-aware experimentation using expected profit loss to prioritize sampling customers who matter most for targeting decisions. The approach improves profitability while dramatically reducing sample size requirements.</div>
         </div>
@@ -451,7 +472,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Noah M. Ahmadi, Eva Ascarza, and Ayelet Israeli (2025)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We introduce protected heterogeneity as the share of variation in an algorithmic score explained by protected attributes. We develop a variance-based diagnostic, (R^2_{prot}), that is threshold-invariant and interpretable. We further propose residualized scores that preserve individual differentiation while guaranteeing fairness.</div>
         </div>
@@ -467,7 +488,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Aurélie Lemmens, Jason M. T. Roos, Sebastian Gabel, Eva Ascarza, Hernán A. Bruno, Brett R. Gordon, Ayelet Israeli, Elea McDonnell Feit, Carl F. Mela, and Oded Netzer (2025)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">Personalization has become the heartbeat of modern marketing. The rapid expansion of individual-level data, the proliferation of personalized communication channels, and advances in experimentation have fundamentally reshaped how firms tailor their marketing strategies. Furthermore, causal inference and machine learning enable firms to understand how the same marketing action can impact individual customers differently. This article formalizes personalization as a causal inference problem embedded in a test-and-learn framework. We review key challenges and solutions related to data limitations, treatment effect heterogeneity, policy evaluation, and ethical considerations, and identify emerging research trends such as generic and double machine learning, direct policy learning, foundation models, and generative AI.</div>
             <div class="paper-venue">International Journal of Research in Marketing 42(1), 1-24</div>
@@ -483,7 +504,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Eva Ascarza, Oded Netzer, and Julian Runge (2025)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">Using a large randomized control trial in a free-to-play mobile game, we study dynamic difficulty adjustment. While lower difficulty reduces short-term purchases, it increases engagement and long-term retention, leading to higher overall monetization. We document substantial heterogeneity and derive implications for personalized product design.</div>
             <div class="paper-venue">International Journal of Research in Marketing 42(1), 107-128</div>
@@ -499,7 +520,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Nicolas Padilla, Eva Ascarza and Oded Netzer (2025)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We propose a probabilistic model that fuses click-stream and purchase data within and across customer journeys to better leverage first-party data in infrequent purchase settings. Using a Bayesian nonparametric Pitman–Yor process to capture context heterogeneity, the model addresses the cold start problem and improves personalization and retargeting performance.</div>
             <div class="paper-venue">Quantitative Marketing and Economics 23, 379-418</div>
@@ -515,7 +536,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Ta-Wei Huang and Eva Ascarza (2024)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">Firms often target customers using CATEs estimated on long-term outcomes, but such outcomes accumulate noise and unobserved heterogeneity. We show that this leads to ineffective targeting. We propose using short-term outcomes and surrogate indices, including a separate imputation strategy for churn and purchase intensity, to improve long-run targeting performance.</div>
             <div class="paper-venue">Marketing Science 43(4), 863-884</div>
@@ -532,7 +553,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Ryan Dew, Eva Ascarza, Oded Netzer, and Nachum Sicherman (2024)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We propose a Bayesian nonparametric model to detect individual-level routines—repeated behaviors with temporal structure. Applied to ridesharing data, we show that routineness predicts higher future usage, greater resilience to service failures, and heterogeneous responses to pricing and service disruptions.</div>
             <div class="paper-venue">Journal of Marketing Research 61(2), 368-392</div>
@@ -551,7 +572,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Eva Ascarza and Ayelet Israeli (2022)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">An inherent risk of algorithmic personalization is disproportionate targeting of protected groups. Removing protected attributes does not eliminate bias due to correlated proxies. We propose BEAT, a bias-eliminating adapted trees approach that ensures balanced allocation while preserving personalization value. Using simulations and an online experiment, we demonstrate both group and individual fairness.</div>
             <div class="paper-venue">Proceedings of the National Academy of Sciences 119(11)</div>
@@ -568,7 +589,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Nicolas Padilla and Eva Ascarza (2021)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We propose a probabilistic machine learning approach to overcome the cold start problem in CRM by efficiently learning about new customers. Our method combines collaborative filtering with causal inference to estimate individual treatment effects with limited data.</div>
             <div class="paper-venue">Journal of Marketing Research 58(5), 981-1006</div>
@@ -583,7 +604,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Eva Ascarza, Michael Ross, and Bruce G.S. Hardie (2021)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We identify common pitfalls in applying AI to marketing and provide practical guidance for improving marketing AI effectiveness.</div>
             <div class="paper-venue">Harvard Business Review, July-August</div>
@@ -599,7 +620,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Eva Ascarza (2018)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">Companies often target customers with the highest risk of churning, assuming they are the best candidates for retention. Combining field experiments with machine learning, we show that high-risk customers are not necessarily the most responsive to retention interventions. Instead, targeting based on heterogeneity in treatment response significantly improves retention effectiveness.</div>
             <div class="paper-venue">Journal of Marketing Research 55(1), 80-98</div>
@@ -615,7 +636,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Eva Ascarza, Scott A. Neslin, Oded Netzer et al. (2018)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">In today's turbulent business environment, customer retention presents a significant challenge for many service companies. Although a large body of research focuses on predicting customer churn, several equally important aspects of retention management have received less attention. We draw on prior research and current practice to provide insights into managing retention and to identify areas for future research. We advocate a broad perspective on retention that goes beyond a binary retain/churn view, propose a flexible definition of retention, discuss alternative metrics for measuring retention, and present an integrated framework for managing retention that leverages new data sources and methodologies such as machine learning. We identify trade-offs between reactive and proactive retention, between short- and long-term remedies, and between discrete campaigns and continuous processes, and outline a research agenda to better align academic work with managerial needs.</div>
             <div class="paper-venue">Customer Needs and Solutions 5, 65-81</div>
@@ -632,7 +653,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Eva Ascarza, Oded Netzer and Bruce Hardie (2018)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">We study hybrid settings in which firms face both observed (overt) and unobserved (silent) churn. We develop a hidden Markov model that separates the two churn types. Applying the model to a daily deals site and a performing arts organization, we find that overt churners are often highly active before leaving, while silent churners disengage early and rarely respond to firm communications.</div>
             <div class="paper-venue">Marketing Science 37(1), 54-77</div>
@@ -648,7 +669,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Eva Ascarza, Peter Ebbes, Oded Netzer and Matthew Danielson (2017)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">CRM campaigns traditionally focus on targeted customers. Using a randomized field experiment in a mobile telecom setting, we show that such campaigns generate spillover effects through social networks, increasing usage and reducing churn among non-targeted but connected customers. We estimate a social multiplier of 1.28 and show that spillovers are driven by increased communication between targeted customers and their connections.</div>
             <div class="paper-venue">Journal of Marketing Research 54(3), 347-363</div>
@@ -665,7 +686,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Eva Ascarza, Raghuram Iyengar and Martin Schleicher (2016)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">Facing increasing customer churn, many service firms have begun recommending pricing plans to their customers. Using a large-scale field experiment, we examine the effectiveness of such proactive retention campaigns. We find that encouraging customers to switch to cost-minimizing plans can increase rather than decrease churn. We propose two mechanisms—reduced inertia and increased salience of past usage—and provide evidence supporting both explanations. We further assess the revenue implications and derive recommendations for targeting such campaigns.</div>
             <div class="paper-venue">Journal of Marketing Research 53(1), 46-60</div>
@@ -682,7 +703,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Eva Ascarza and Bruce G.S. Hardie (2013)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">As firms become more customer-centric, concepts such as customer equity come to the fore. Any serious attempt to quantify customer equity requires modeling techniques that can provide accurate multiperiod forecasts of customer behavior. Although a number of researchers have explored the problem of modeling customer churn in contractual settings, there is surprisingly limited research on the modeling of usage while under contract. The present work contributes to the existing literature by developing an integrated model of usage and retention in contractual settings. The proposed method fully leverages the interdependencies between these two behaviors even when they occur on different time scales. We propose a model in which usage and renewal are modeled simultaneously by assuming that both behaviors reflect a common latent variable that evolves over time. We capture the dynamics in the latent variable using a hidden Markov model with a heterogeneous transition matrix and allow for unobserved heterogeneity in the associated usage process.</div>
             <div class="paper-venue">Marketing Science 32(4), 570-590</div>
@@ -699,7 +720,7 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             </div>
             <div class="paper-authors-line">
                 <span class="paper-authors">Eva Ascarza, Anja Lambrecht and Naufel Vilcassim (2012)</span>
-                <span class="abstract-toggle" onclick="toggleAbstract(this)">[Show Abstract]</span>
+                <button type="button" class="abstract-toggle" aria-expanded="false" onclick="toggleAbstract(this)">Show abstract</button>
             </div>
             <div class="abstract">In many service industries, firms introduce three-part tariffs to replace or complement existing two-part tariffs. Behavioral research suggests that the attributes of a pricing plan may affect behavior beyond their direct cost implications. Evidence suggests that customers value free units above and beyond what might be expected from the change in their budget constraint. We examine a market in which three-part tariffs were introduced for the first time and analyze tariff choice and usage behavior for customers who switch from two-part to three-part tariffs. We show that switchers significantly "overuse" relative to what would be predicted from the change in the budget constraint alone. We develop a joint discrete–continuous model of tariff choice and usage that allows for a higher valuation of free units. The results indicate that the majority of three-part-tariff users value minutes under a three-part tariff more than under a two-part tariff, generating substantial revenue implications for the firm.</div>
             <div class="paper-venue">Journal of Marketing Research 49(6), 882-899</div>
@@ -836,6 +857,17 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
             <div class="paper-authors">Featuring "The perils of proactive churn prevention using plan recommendations: Evidence from a field experiment"</div>
         </div>
     </section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+        Leonard N. Stern School of Business<br>
+        Tisch Hall 817<br>
+        40 W 4th Street<br>
+        New York, NY 10012<br>
+        eascarza [at] stern.nyu.edu
+    </div>
+</section>
     </main>
 
     <footer>
@@ -852,13 +884,21 @@ Tisch Hall 40 W 4th Street, NY 10012<br>
 
             if (abstract.classList.contains('show')) {
                 abstract.classList.remove('show');
-                element.textContent = '[Show Abstract]';
+                element.textContent = 'Show abstract';
+                element.setAttribute('aria-expanded', 'false');
             } else {
                 abstract.classList.add('show');
-                element.textContent = '[Hide Abstract]';
+                element.textContent = 'Hide abstract';
+                element.setAttribute('aria-expanded', 'true');
             }
         }
 
-    </script>
+    
+document.querySelectorAll('[data-choice]').forEach(button=>button.addEventListener('click',()=>{document.body.dataset.layout=button.dataset.choice;document.querySelectorAll('[data-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));}));
+const research=document.querySelector('#research');
+const headings=[...research.querySelectorAll('h3')];
+headings.forEach((h,i)=>{h.id='research-group-'+i;const a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent;document.querySelector('.research-shortcuts').append(a);});
+
+</script>
 </body>
 </html>
