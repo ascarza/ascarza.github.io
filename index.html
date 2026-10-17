@@ -300,11 +300,14 @@ body[data-layout=compact] .profile-section{grid-template-columns:minmax(0,1fr) 1
 #research{padding-top:10px}
 .paper{padding-bottom:8px;margin-bottom:10px}
 .abstract:not(.show){margin-top:0}
+/* Keep the research introduction compact. */
+#research > h2{margin-bottom:10px}
+#research .research-tools{margin-bottom:10px}
+#research .research-tools + h3{margin-top:12px}
 </style>
 </head>
 <body data-layout="right">
 <a class="skip-link" href="#research">Skip to research</a>
-<div class="preview-tools"><strong>Version 2 · Design preview</strong><span>Compare the introduction layouts:</span><div class="layout-buttons" role="group" aria-label="Introduction layout"><button type="button" data-choice="right" aria-pressed="true">1 · Photo right</button><button type="button" data-choice="left" aria-pressed="false">2 · Photo left</button><button type="button" data-choice="compact" aria-pressed="false">3 · Compact</button></div><a href="index.html">View current site</a></div>
     <header>
         <div class="header-content">
             <h1>Eva Ascarza</h1>
@@ -894,7 +897,6 @@ body[data-layout=compact] .profile-section{grid-template-columns:minmax(0,1fr) 1
         }
 
     
-document.querySelectorAll('[data-choice]').forEach(button=>button.addEventListener('click',()=>{document.body.dataset.layout=button.dataset.choice;document.querySelectorAll('[data-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));}));
 const research=document.querySelector('#research');
 const headings=[...research.querySelectorAll('h3')];
 headings.forEach((h,i)=>{h.id='research-group-'+i;const a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent;document.querySelector('.research-shortcuts').append(a);});
